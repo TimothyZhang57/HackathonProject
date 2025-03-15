@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    int keyboardChoice = ui->comboBox->currentIndex();
+    int keyboardChoice = ui->KeyboardLayout->currentIndex();
     QString  layout;
     switch(keyboardChoice){
         case 0:
@@ -84,6 +84,15 @@ void MainWindow::on_pushButton_clicked()
             break;
         default:
             layout = "sk_SK_102";
+    }
+    QString resolution = ui->Resolution->currentText();
+    QString username = ui->Username->text();
+    QString password = ui->Password->text();
+    bool camera = true;
+    if(ui->Hardware->isChecked()){
+        camera = true;
+    }else if(ui->Simulated->isChecked()){
+        camera = false;
     }
 
     qInfo() << layout;

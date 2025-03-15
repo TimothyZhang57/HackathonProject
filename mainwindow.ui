@@ -27,11 +27,11 @@
      <string>Raspberry Pi QNX Quick Setup Wizard</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="KeyboardLayout">
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>50</y>
+      <y>120</y>
       <width>241</width>
       <height>24</height>
      </rect>
@@ -150,9 +150,9 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>40</y>
-      <width>71</width>
+      <x>10</x>
+      <y>110</y>
+      <width>101</width>
       <height>41</height>
      </rect>
     </property>
@@ -163,8 +163,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>220</y>
+      <x>330</x>
+      <y>260</y>
       <width>80</width>
       <height>24</height>
      </rect>
@@ -177,7 +177,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>80</y>
+      <y>150</y>
       <width>71</width>
       <height>41</height>
      </rect>
@@ -186,11 +186,11 @@
      <string>Resolution</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox_2">
+   <widget class="QComboBox" name="Resolution">
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>90</y>
+      <y>160</y>
       <width>241</width>
       <height>24</height>
      </rect>
@@ -231,6 +231,97 @@
      </property>
     </item>
    </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Username">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>50</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Password">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>80</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>180</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Camera</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="Hardware">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>190</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hardware</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="Simulated">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>190</y>
+      <width>91</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Simulated</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -238,7 +329,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>17</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
