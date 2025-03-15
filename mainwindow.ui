@@ -197,37 +197,37 @@
     </property>
     <item>
      <property name="text">
-      <string>640x480</string>
+      <string>640 x 480</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>1024x768</string>
+      <string>1024 x 768</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>1280x720</string>
+      <string>1280 x 720</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>1280x1024</string>
+      <string>1280 x 1024</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>1440x900</string>
+      <string>1440 x 900</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>1600x1200</string>
+      <string>1600 x 1200</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>1920x1080</string>
+      <string>1920 x 1080</string>
      </property>
     </item>
    </widget>
@@ -265,22 +265,6 @@
       <width>113</width>
       <height>24</height>
      </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="WifiCredentials">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>220</y>
-      <width>113</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::EchoMode::Password</enum>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -322,20 +306,7 @@
      <string>Simulated</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>210</y>
-      <width>101</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Wifi Credentials</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="Password_2">
+   <widget class="QLineEdit" name="Password">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -358,7 +329,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>

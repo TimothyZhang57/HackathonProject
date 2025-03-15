@@ -1,6 +1,12 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <fstream>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -17,8 +23,9 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     QString username = ui->Username->text();
-    QString password = ui->WifiCredentials->text();
-    login(username, password);
+    QString password = ui->Password->text();
+    //login(username, password);
+    updateSettings();
 }
 void MainWindow::login(QString username, QString password){
     bool successful;
@@ -109,8 +116,39 @@ void MainWindow::updateSettings(){
     }else if(ui->Simulated->isChecked()){
         camera = false;
     }
-    FILE *fptr;
-    fptr = fopen("graphics-rpi4.conf", W);
-    FILE *fptr2;
-    fptr2 = fopen("qnx_config.txt",W);
+
+    //Implementation of Keyboard Layout and Video Resolution Change in graphics-rpi4.conf
+    const string graphicsconf = "graphics-rpi4.conf";
+    ofstream outs(graphicsconf);
+    const string graphics1 = "graphics1.txt";
+    ifstream ins1(graphics1);
+    string line;
+    while (getline(ins1, line)){
+        outs << line << "\n";
+    }
+    ins1.close();
+    string lo =layout.toStdString();
+    string vr =resolution.toStdString();
+    string changes = "keymap = /system/share/keyboard/" + lo + "\n end globals" +"\n begin display 1" + "\n video-mode = " + vr +" @ 60\n";
+    outs << changes;
+    const string graphics2 = "graphics2.txt";
+    ifstream ins2(graphics2);
+    while (getline(ins2, line)){
+        outs << line << "\n";
+    }
+    ins2.close();
+    outs.close();
+
+    //Implementation of Camera switch
+    const string config = "qnx_config.txt";
+    ofstream cameraouts(config);
+    string cameraconf;
+    if(camera){
+        cameraconf = "HOSTNAME=qnxpi \n USE_DEMO_SENSOR=true";
+    }
+    else{
+        cameraconf = "HOSTNAME=qnxpi \n USE_DEMO_SENSOR=false";
+    }
+    cameraouts << cameraconf;
+    cameraouts.close();
 }

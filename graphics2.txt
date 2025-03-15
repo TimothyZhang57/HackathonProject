@@ -1,0 +1,29 @@
+stack-size = 65536  # in units of bytes
+    force-composition = true
+    cursor = on # has to be on, otherwise it takes 10s to initializen
+  end display
+
+#   begin display 2
+#     video-mode = 1920 x 1080 @ 60
+#     stack-size = 65536  # in units of bytes
+#    force-composition = true
+#   end display
+
+  begin class framebuffer-1
+    display = 1
+    pipeline = 1
+    buffer-count = 3
+    format = rgba8888
+    usage = gles2blt physical
+    #usage = rpi4drm physical
+  end class
+
+#   begin class framebuffer-2
+#     display = 2
+#     pipeline = 2
+#     buffer-count = 3
+#     format = rgba8888
+#     usage = rpi4drm physical
+#   end class
+
+end winmgr
