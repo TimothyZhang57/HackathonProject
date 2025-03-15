@@ -17,22 +17,22 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>30</y>
+      <x>230</x>
+      <y>0</y>
       <width>191</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Setup Wizard</string>
+     <string>Raspberry Pi QNX Quick Setup Wizard</string>
     </property>
    </widget>
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>150</y>
-      <width>72</width>
+      <x>120</x>
+      <y>50</y>
+      <width>241</width>
       <height>24</height>
      </rect>
     </property>
@@ -53,27 +53,27 @@
     </item>
     <item>
      <property name="text">
-      <string>English(Canadian)</string>
+      <string>English (Canadian)</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>English(Canadian)(Dvorak)</string>
+      <string>English (Canadian) (Dvorak)</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>English(British)</string>
+      <string>English (British)</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>English(United States)</string>
+      <string>English (United States)</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>English(United States)(Dvoark)</string>
+      <string>English (United States) (Dvoark)</string>
      </property>
     </item>
     <item>
@@ -83,22 +83,22 @@
     </item>
     <item>
      <property name="text">
-      <string>French(Belgian)</string>
+      <string>French (Belgian)</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>French(Canadian)</string>
+      <string>French (Canadian)</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>French(Swiss)</string>
+      <string>French (Swiss)</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>French(France)</string>
+      <string>French (France)</string>
      </property>
     </item>
     <item>
@@ -150,28 +150,86 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>80</y>
-      <width>191</width>
+      <x>40</x>
+      <y>40</y>
+      <width>71</width>
       <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>Pick Your Keyboard Layout</string>
+     <string>Keyboard Layout</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>200</y>
+      <x>430</x>
+      <y>220</y>
       <width>80</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>Submit</string>
+     <string>Apply</string>
     </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>80</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Resolution</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>90</y>
+      <width>241</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>640x480</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1024x768</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1280x720</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1280x1024</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1440x900</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1600x1200</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1920x1080</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -180,7 +238,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>17</height>
     </rect>
    </property>
   </widget>
