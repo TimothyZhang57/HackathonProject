@@ -13,7 +13,167 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>30</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Setup Wizard</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>150</y>
+      <width>72</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Czech</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Danish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>German</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>English(Canadian)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>English(Canadian)(Dvorak)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>English(British)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>English(United States)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>English(United States)(Dvoark)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Spanish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>French(Belgian)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>French(Canadian)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>French(Swiss)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>French(France)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Croatian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Italian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Japanese</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Dutch</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Norwegian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Polish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Portuguese</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Northern Sami</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Slovak</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>80</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Pick Your Keyboard Layout</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>200</y>
+      <width>80</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Submit</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
