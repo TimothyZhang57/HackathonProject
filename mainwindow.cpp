@@ -181,4 +181,7 @@ void MainWindow::updateSettings() {
       graphicsconf));
   rpi.sendCommand(
       std::format("echo \"{}\" > /boot/qnx_config.txt", cameraconf));
+  QMessageBox msgBox;
+  msgBox.setText("Settings Updated");
+  msgBox.exec();
 }
