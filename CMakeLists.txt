@@ -15,6 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
+        SSHClient.h
+        SSHClient.cpp
         mainwindow.h
         mainwindow.ui
 )
@@ -42,7 +44,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(HackathonCmakeVersion PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(HackathonCmakeVersion PRIVATE Qt${QT_VERSION_MAJOR}::Widgets ssh)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
