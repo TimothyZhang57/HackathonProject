@@ -17,8 +17,17 @@ HEADERS += \
 
 FORMS += \
     mainwindow.ui
+TEXTS += \
+    graphics1.txt\
+    graphics2.txt\
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    graphics-rpi4.conf \
+    graphics1.txt \
+    graphics2.txt \
+    qnx_config.txt

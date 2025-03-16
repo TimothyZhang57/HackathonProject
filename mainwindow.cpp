@@ -4,7 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-
+#include <format>
 using namespace std;
 
 MainWindow::MainWindow(QWidget *parent)
@@ -118,12 +118,24 @@ void MainWindow::updateSettings(){
     }
 
     //Implementation of Keyboard Layout and Video Resolution Change in graphics-rpi4.conf
-    const string graphicsconf = "graphics-rpi4.conf";
+    qDebug() << "Keyboard";
+    string lo =layout.toStdString();
+    string vr =resolution.toStdString();
+    string graphicsconf = std::format("begin khronos\n \n begin egl display 1\n egl-dlls = libglapi-mesa.so libEGL-mesa.so\n glesv2-dlls = libglapi-mesa.so libGLESv2-mesa.so\n gpu-dlls = gpu_drm-rpi4.so\n vk-icds = broadcom_icd.json\n vk-exps = /usr/lib/graphics/vulkan/VkLayer_khronos_validation.json\n end egl display\n \n begin wfd device 1\n wfd-dlls = libwfdcfg-rpi4-generic.so libWFDrpi4-drm-atomic.so\n \n # Run \"drm-probe-displays\" to list the available displays and pipelines,\n # and \"use $GRAPHICS_ROOT/libWFDrpi4-drm.so\" for more information on\n # these driver-specific settings.\n \n # Here is displays map for Raspberry Pi 4:\n # display 1: HDMI-A\n # display 2: HDMI-A\n \n # Pipeline IDs 1 to 9 are used for DRM CRTCs.  One should be assigned\n # to each display that will be used.\n pipeline1-display = 1\n # pipeline2-display = 2\n end wfd device\n \n end khronos\n \n begin winmgr\n \n begin globals\n default-display = 1\n stack-size = 65536  # in units of bytes\n blit-config = rpi4drm\n alloc-config = rpi4drm\n requests-logsize = 65536\n blits-logsize = 4096\n input = keyboard mouse\n keymap = /system/share/keyboard/{}\n end globals\n \n begin display 1\n video-mode = {} @ 60\n stack-size = 65536  # in units of bytes\n force-composition = true\n cursor = on # has to be on, otherwise it takes 10s to initializen\n end display\n \n #   begin display 2\n #     video-mode = 1920 x 1080 @ 60\n #     stack-size = 65536  # in units of bytes\n #    force-composition = true\n #   end display\n \n begin class framebuffer-1\n display = 1\n pipeline = 1\n buffer-count = 3\n format = rgba8888\n usage = gles2blt physical\n #usage = rpi4drm physical\n end class\n \n #   begin class framebuffer-2\n #     display = 2\n #     pipeline = 2\n #     buffer-count = 3\n #     format = rgba8888\n #     usage = rpi4drm physical\n #   end class\n \n end winmgr\n", lo, vr);
+    qDebug() << graphicsconf;
+    string cameraconf;
+    if(camera){
+        cameraconf = std::format("HOSTNAME=qnxpi \n USE_DEMO_SENSOR={}", "true");
+    }else{
+        cameraconf = std::format("HOSTNAME=qnxpi \n USE_DEMO_SENSOR={}", "false");
+    }
+    /*const string graphicsconf = "graphics-rpi4.conf";
     ofstream outs(graphicsconf);
     const string graphics1 = "graphics1.txt";
     ifstream ins1(graphics1);
     string line;
     while (getline(ins1, line)){
+        qDebug() << line;
         outs << line << "\n";
     }
     ins1.close();
@@ -134,6 +146,7 @@ void MainWindow::updateSettings(){
     const string graphics2 = "graphics2.txt";
     ifstream ins2(graphics2);
     while (getline(ins2, line)){
+        qDebug() << line;
         outs << line << "\n";
     }
     ins2.close();
@@ -150,5 +163,5 @@ void MainWindow::updateSettings(){
         cameraconf = "HOSTNAME=qnxpi \n USE_DEMO_SENSOR=false";
     }
     cameraouts << cameraconf;
-    cameraouts.close();
+    cameraouts.close();*/
 }
